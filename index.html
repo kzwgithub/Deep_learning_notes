@@ -62,6 +62,101 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-assignment2_2_note" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/04/assignment2_2_note/" class="article-date">
+  <time datetime="2018-12-04T02:30:48.700Z" itemprop="datePublished">2018-12-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="任务2-1-逻辑回归-用神经网络思维"><a href="#任务2-1-逻辑回归-用神经网络思维" class="headerlink" title="任务2_1 : 逻辑回归(用神经网络思维)"></a>任务2_1 : 逻辑回归(用神经网络思维)</h1><h2 id="1-数据的预处理-归一化"><a href="#1-数据的预处理-归一化" class="headerlink" title="1.数据的预处理,归一化"></a>1.数据的预处理,归一化</h2><h3 id="数据预处理的一般步骤"><a href="#数据预处理的一般步骤" class="headerlink" title="数据预处理的一般步骤:"></a>数据预处理的一般步骤:</h3><ol>
+<li>确定数据集的demensions和shape(m_train, m_test, w_px, h_px …)</li>
+<li>reshape数据集成一个向量:shape=(num_train, w_px, h_px, 3) –&gt; shape=(num_train, w_px <em> h_px </em> 3)<br><img src="https://i.imgur.com/werK0ce.jpg" alt=""></li>
+</ol>
+<h3 id="数据归一化"><a href="#数据归一化" class="headerlink" title="数据归一化:"></a>数据归一化:</h3><ol>
+<li>常见的数据归一化方式: 减去数组平均值 –&gt; 除以数组标准差</li>
+<li>图片数据归一化 : 每个样本除以255（像素通道的最大值）<h3 id="断言的使用-对定向确定bug很有效"><a href="#断言的使用-对定向确定bug很有效" class="headerlink" title="断言的使用: 对定向确定bug很有效"></a>断言的使用: 对定向确定bug很有效</h3> assert(w.shape == (dim, 1))<br> assert(isinstance(b, float) or isinstance(b, int))</li>
+</ol>
+<h2 id="2-学习算法的一般结构"><a href="#2-学习算法的一般结构" class="headerlink" title="2.学习算法的一般结构"></a>2.学习算法的一般结构</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构:"></a>结构:</h3><p><img src="https://i.imgur.com/8v7MUvc.jpg" alt=""></p>
+<h3 id="学习算法的实现过程"><a href="#学习算法的实现过程" class="headerlink" title="学习算法的实现过程:"></a>学习算法的实现过程:</h3><ol>
+<li>初始化模型参数</li>
+<li>通过最小化cost来学习模型的参数(training set)</li>
+<li>使用学习到的参数做预测(test set)</li>
+<li>分析结果,得出结论<h3 id="前向传播-二分类逻辑回归"><a href="#前向传播-二分类逻辑回归" class="headerlink" title="前向传播(二分类逻辑回归):"></a>前向传播(二分类逻辑回归):</h3><img src="https://i.imgur.com/yv47AKa.jpg" alt=""><h3 id="后向传播-二分类逻辑回归"><a href="#后向传播-二分类逻辑回归" class="headerlink" title="后向传播(二分类逻辑回归):"></a>后向传播(二分类逻辑回归):</h3><img src="https://i.imgur.com/NVLNaiD.jpg" alt=""></li>
+</ol>
+<h2 id="3-建立神经网络的一般步骤"><a href="#3-建立神经网络的一般步骤" class="headerlink" title="3.建立神经网络的一般步骤"></a>3.建立神经网络的一般步骤</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤:"></a>步骤:</h3><ol>
+<li>定义模型结构</li>
+<li>初始化模型参数</li>
+<li>迭代学习模型参数: 前向传播 -&gt; 计算cost -&gt; 后向传播 -&gt; 计算grad -&gt; 更新参数(梯度下降)</li>
+<li>在test set上做预测<h3 id="one-more-thing"><a href="#one-more-thing" class="headerlink" title="one more thing:"></a>one more thing:</h3></li>
+</ol>
+<ul>
+<li>通常都会把step1-3整合到一个函数中(nn_model),然后就可以:建立model -&gt; 学习参数 -&gt; 在新数据上做预测</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/04/assignment2_2_note/" data-id="cjp94zyuo0001r8g64x6s7z38" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-assignment2_1_note" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/04/assignment2_1_note/" class="article-date">
+  <time datetime="2018-12-04T02:30:48.695Z" itemprop="datePublished">2018-12-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="任务2-1-Python-numpy-基础练习"><a href="#任务2-1-Python-numpy-基础练习" class="headerlink" title="任务2_1 :Python numpy 基础练习"></a>任务2_1 :Python numpy 基础练习</h1><h2 id="1-normalization"><a href="#1-normalization" class="headerlink" title="1.normalization"></a>1.normalization</h2><p>###示例:按行归一化<br>    x = [[0,3,4],[2,6,4]]<br>    x_norm = np.linalg.norm(x,ord=2,axis=1,keepdims=True) #=[5,根号(56)]<br>    x_normalized = x/x_norm = [[0,3/5,4/5],[2/根号(56),6/根号(56),4/根号(56)]]</p>
+<p>###注意 : </p>
+<ul>
+<li>axis=1 : 按行归一化</li>
+<li>keepdims : 保持矩阵原有的形状 -&gt; 便于brodacast</li>
+<li>ord : 范数,默认是求2范数</li>
+<li><p>向量的范数 : </p>
+<p><img src="https://i.imgur.com/LEd3HZB.png" alt=""></p>
+</li>
+</ul>
+<h2 id="2-the-gradient-of-sigmoid"><a href="#2-the-gradient-of-sigmoid" class="headerlink" title="2.the gradient of sigmoid"></a>2.the gradient of sigmoid</h2><p>###示例:<br>    sigmoid_derivative(x) = σ′(x) = σ(x)(1−σ(x))</p>
+<h2 id="3-L1损失和L2损失"><a href="#3-L1损失和L2损失" class="headerlink" title="3.L1损失和L2损失"></a>3.L1损失和L2损失</h2><ul>
+<li>L1损失 : </li>
+</ul>
+<p><img src="https://i.imgur.com/VHJwx0v.jpg" alt=""></p>
+<ul>
+<li>L2损失 : </li>
+</ul>
+<p><img src="https://i.imgur.com/Dz1q37K.jpg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/04/assignment2_1_note/" data-id="cjp94zyug0000r8g6kfsyailg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-课程目录" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/04/课程目录/" class="article-date">
@@ -249,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/04/课程目录/" data-id="cjp94l1fz000018g6cujhsw2u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/04/课程目录/" data-id="cjp94zyv00002r8g6j80od9qn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -288,6 +383,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/12/04/assignment2_2_note/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/04/assignment2_1_note/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/12/04/课程目录/">(no title)</a>
