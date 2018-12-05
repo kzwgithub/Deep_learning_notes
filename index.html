@@ -62,6 +62,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-1.Initialization_kzw" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/05/1.Initialization_kzw/" class="article-date">
+  <time datetime="2018-12-05T12:12:55.836Z" itemprop="datePublished">2018-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="改善deep-NN-week1-assignment1"><a href="#改善deep-NN-week1-assignment1" class="headerlink" title="改善deep NN : week1,assignment1"></a>改善deep NN : week1,assignment1</h1><h2 id="1-神经网络中需要初始化的两种参数类型为"><a href="#1-神经网络中需要初始化的两种参数类型为" class="headerlink" title="1.神经网络中需要初始化的两种参数类型为"></a>1.神经网络中需要初始化的两种参数类型为</h2><p><img src="https://i.imgur.com/CcdQPWx.jpg" alt=""></p>
+<h2 id="2-三种初始化参数的方法"><a href="#2-三种初始化参数的方法" class="headerlink" title="2.三种初始化参数的方法"></a>2.三种初始化参数的方法</h2><h3 id="1-零初始化"><a href="#1-零初始化" class="headerlink" title="1) 零初始化"></a>1) 零初始化</h3><h3 id="2-ranndom初始化"><a href="#2-ranndom初始化" class="headerlink" title="2) ranndom初始化"></a>2) ranndom初始化</h3><h3 id="3-He初始化"><a href="#3-He初始化" class="headerlink" title="3) He初始化"></a>3) He初始化</h3><h2 id="3-零初始化"><a href="#3-零初始化" class="headerlink" title="3.零初始化"></a>3.零初始化</h2><h3 id="1-具体操作"><a href="#1-具体操作" class="headerlink" title="1) 具体操作"></a>1) 具体操作</h3><ul>
+<li>W = np.zeros((layers_dims[l],layers_dims[l-1]),dtype=float)</li>
+<li>b = np.zeros((layers_dims[l],1),dtype=float)</li>
+</ul>
+<h3 id="2-实验结果-结论"><a href="#2-实验结果-结论" class="headerlink" title="2) 实验结果,结论"></a>2) 实验结果,结论</h3><ul>
+<li>结果很糟糕,accuracy=0.5,网络并没有学到东西</li>
+<li>一般情况下，初始化所有权值为零会导致网络不能打破对称性。这意味着每一层的每个神经元都会学到同样的东西</li>
+<li>** 权重W应该随机初始化来打破对称性</li>
+<li>**偏置b可以初始化为零,只要W打破了对称性</li>
+</ul>
+<h2 id="4-ranndom初始化-值较大时"><a href="#4-ranndom初始化-值较大时" class="headerlink" title="4.ranndom初始化,值较大时"></a>4.ranndom初始化,值较大时</h2><h3 id="1-具体操作-1"><a href="#1-具体操作-1" class="headerlink" title="1) 具体操作"></a>1) 具体操作</h3><ul>
+<li>W = np.random.randn(layers_dims[l],layers_dims[l-1])*10</li>
+<li>b = np.zeros((layers_dims[l],1),dtype=float)</li>
+</ul>
+<h3 id="2-实验结果-结论-1"><a href="#2-实验结果-结论-1" class="headerlink" title="2) 实验结果,结论"></a>2) 实验结果,结论</h3><ul>
+<li>结果较好,accuracy=0.86</li>
+<li>当随机初始化的参数值较大时,网络表现不是很好,建议将10换成0.01</li>
+</ul>
+<h2 id="5-He初始化"><a href="#5-He初始化" class="headerlink" title="5.He初始化"></a>5.He初始化</h2><h3 id="1-条件-使用ReLU激活函数"><a href="#1-条件-使用ReLU激活函数" class="headerlink" title="1)条件 : 使用ReLU激活函数"></a>1)条件 : 使用ReLU激活函数</h3><h3 id="2-系数图解"><a href="#2-系数图解" class="headerlink" title="2)系数图解"></a>2)系数图解</h3><p><img src="https://i.imgur.com/OK5uvEO.jpg" alt=""></p>
+<h3 id="3-具体操作"><a href="#3-具体操作" class="headerlink" title="3) 具体操作"></a>3) 具体操作</h3><ul>
+<li>W = np.random.randn(layers_dims[l],layers_dims[l-1])*np.sqrt(2/layers_dims[l-1])</li>
+<li>b = np.zeros((layers_dims[l],1),dtype=float)</li>
+</ul>
+<h3 id="4-实验结果-结论"><a href="#4-实验结果-结论" class="headerlink" title="4) 实验结果,结论"></a>4) 实验结果,结论</h3><ul>
+<li>结果很不错,accuracy=0.96</li>
+</ul>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6.总结"></a>6.总结</h2><ul>
+<li>不同的初始化方式会得到不同的结果</li>
+<li>随机初始化用来打破对称性,确保每个神经元都能学到不同的信息</li>
+<li>不要初始化太大的值</li>
+<li>He_initialization在使用ReLU激活函数时表现的很好</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/05/1.Initialization_kzw/" data-id="cjpb4x45v0000esg6ssxvu9vo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-assignment3_kzw" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/04/assignment3_kzw/" class="article-date">
@@ -89,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/04/assignment3_kzw/" data-id="cjpb46z9s0002vcg6ed3e331f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/04/assignment3_kzw/" data-id="cjpb4x4650002esg6nplg9wv3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/04/assignment2_2_note/" data-id="cjpb46z9q0001vcg6tsq7fxs2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/04/assignment2_2_note/" data-id="cjpb4x4670003esg6bmzv7rc6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/04/assignment2_1_note/" data-id="cjpb46z9j0000vcg6i9k06gju" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/04/assignment2_1_note/" data-id="cjpb4x4630001esg6xfjt0nhp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,6 +282,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/12/05/1.Initialization_kzw/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/12/04/assignment3_kzw/">(no title)</a>
